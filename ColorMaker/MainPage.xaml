@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorMaker.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#091057</Color>
+        <Color x:Key="Secondary">#024CAA</Color>
+        <Color x:Key="Tertiary">#EC8305</Color>
+    </ContentPage.Resources>
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label FontAttributes="Bold" FontSize="Large" Text="Color Maker" HorizontalTextAlignment="Center"/>
+                <Label Text="Red Value"/>
+                <Slider x:Name="sldRed" ValueChanged="Slider_ValueChanged" ThumbColor="{DynamicResource Secondary}" MaximumTrackColor="{DynamicResource Primary}" MinimumTrackColor="{DynamicResource Tertiary}"/>
+                <Label Text="Green Value"/>
+                <Slider x:Name="sldGreen" ValueChanged="Slider_ValueChanged" ThumbColor="{DynamicResource Secondary}" MaximumTrackColor="{DynamicResource Primary}" MinimumTrackColor="{DynamicResource Tertiary}"/>
+                <Label Text="Blue Value"/>
+                <Slider x:Name="sldBlue" ValueChanged="Slider_ValueChanged" ThumbColor="{DynamicResource Secondary}" MaximumTrackColor="{DynamicResource Primary}" MinimumTrackColor="{DynamicResource Tertiary}"/>
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Button Clicked="lblHex_Clicked" x:Name="lblHex" WidthRequest="180" HeightRequest="50"  HorizontalOptions="End"  VerticalOptions="Center" FontAttributes="Bold" Text="Hex Value : #000" TextColor="White" CornerRadius="15"  BorderWidth="1"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnRandom" Clicked="btnRandom_Click" BackgroundColor="{DynamicResource Secondary}" Text="Generate Random Color" TextColor="White"/>
+            </VerticalStackLayout>
+
+        </Frame>
+    </Grid>
+
+
+</ContentPage>
